@@ -8,7 +8,7 @@ import { CollectionCarousel } from "./CollectionCarousel";
 export function Collection() {
   return (
     <section id="koleksi" className="relative isolate overflow-hidden py-16 lg:py-28">
-      <Decoration src={ellipseOutlined} className="-left-1/4 top-1/4 w-1/2 -scale-x-100" />
+      <Decoration src={ellipseOutlined} className="-left-24 top-1/4 w-120 -scale-x-100" />
       <Sparkle className="bottom-6 left-1/3" />
 
       <Container>
@@ -19,5 +19,5 @@ export function Collection() {
         <CollectionCarousel items={collection} />
       </div>
     </section>
-  )
+  );
 }

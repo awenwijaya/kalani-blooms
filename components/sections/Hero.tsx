@@ -8,21 +8,21 @@ import { siteConfig } from "@/data/site";
 export function Hero() {
   return (
     <section id="beranda" className="relative isolate overflow-hidden">
-      <Decoration src={ellipseFilled} className="-left-1/4 -top-1/4 w-3/4" />
-      <Decoration src={ellipseOutlinedLight} className="-left-1/4 -top-1/3 w-2/3" />
+      <Decoration src={ellipseFilled} className="-left-64 -top-40 w-250" />
+      <Decoration src={ellipseOutlinedLight} className="-left-32 -top-24 w-180" />
       <Sparkle size="sm" className="left-1/3 top-12 hidden lg:block" />
       <Sparkle size="sm" className="right-6 top-12 lg:right-12" />
       <Sparkle size="md" className="bottom-6 right-1/4 hidden md:block" />
 
       <Container className="grid items-center gap-10 pb-16 pt-6 lg:grid-cols-2 lg:pb-28 lg:pt-12">
         <div className="flex max-w-3xl flex-col gap-6">
-          <Image src={logoTagline} alt="Kalani Blooms - Gift & Flower Gallery" className="h-auto w-64 lg:w-108" />
+          <Image src={logoTagline} alt="Kalani Blooms - Gift & Flower Gallery" sizes="(min-width: 1024px) 432px, 256px" className="h-auto w-64 lg:w-108" />
 
-          <h1 className="text-4xl leading-display sm:text-5xl lg:text-7xl">
+          <h1>
             Every Flower <span className="text-secondary">Matters</span>
           </h1>
 
-          <div className="space-y-4 text-base lg:text-xl">
+          <div className="space-y-4">
             <p>
               Kalani Blooms adalah florist di Bali yang menghadirkan rangkaian bunga untuk merayakan momen istimewa
               dan menyampaikan perasaan. Mulai dari hadiah ulang tahun, wisuda, anniversary, hingga ucapan terima
@@ -41,12 +41,13 @@ export function Hero() {
           </Button>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-          <Image src={heroBg} alt="" aria-hidden className="absolute -top-4 right-0 h-auto w-9/10" />
+        <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none lg:justify-self-end">
+          <Image src={heroBg} alt="" aria-hidden sizes="(min-width: 1024px) 45vw, 90vw" className="absolute -top-4 right-0 h-auto w-9/10" />
           <Image
             src={heroOne}
             alt="Buket bunga lily dan anyelir dengan wrapping pink"
             priority
+            sizes="(min-width: 1024px) 50vw, 448px"
             className="relative h-auto w-full"
           />
         </div>

@@ -16,7 +16,7 @@ export function Navbar() {
     <header className="relative z-20 bg-cream/80 py-5 backdrop-blur-sm lg:py-8">
       <Container className="flex items-center justify-between">
         <Link href="#beranda" aria-label="Kalani Blooms - Beranda">
-          <Image src={logo} alt="Kalani Blooms" priority className="h-auto w-36 lg:w-54" />
+          <Image src={logo} alt="Kalani Blooms" priority sizes="(min-width: 1024px) 216px, 144px" className="h-auto w-36 lg:w-54" />
         </Link>
 
         <nav aria-label="Navigasi utama" className="hidden items-center gap-8 md:flex lg:gap-14">
@@ -25,7 +25,7 @@ export function Navbar() {
               key={href}
               href={href}
               className={cn(
-                "font-heading text-lg transition-colors hover:text-primary lg:text-2xl",
+                "font-heading text-base transition-colors hover:text-primary lg:text-lg",
                 index === 0 ? "font-semibold text-primary" : "text-secondary",
               )}
             >
@@ -58,7 +58,7 @@ export function Navbar() {
               href={href}
               onClick={() => setIsOpen(false)}
               className={cn(
-                "py-2 font-heading text-xl",
+                "py-2 font-heading text-lg",
                 index === 0 ? "font-semibold text-primary" : "text-secondary",
               )}
             >

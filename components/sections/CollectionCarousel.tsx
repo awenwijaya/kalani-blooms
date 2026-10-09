@@ -7,7 +7,7 @@ import type { CollectionItem } from "@/types";
 
 type CollectionCarouselProps = {
   items: CollectionItem[];
-}
+};
 
 export function CollectionCarousel({ items }: CollectionCarouselProps) {
   const trackRef = useRef<HTMLUListElement>(null);

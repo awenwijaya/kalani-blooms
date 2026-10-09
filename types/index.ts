@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
 
 export type CardTone = "peach" | "primary" | "brown" | "secondary";
 
@@ -11,8 +11,9 @@ export type Service = {
   title: string;
   description: string;
   tone: CardTone;
-  column: "left" | "right",
-  offset: string;
+  column: "left" | "right";
+  /** Desktop-only horizontal position inside its column (recreates the staggered Figma layout) */
+  align: "start" | "center" | "end";
 };
 
 export type CollectionItem = {
@@ -23,7 +24,12 @@ export type CollectionItem = {
 
 export type Branch = {
   name: string;
+  /** Full address shown to visitors */
   address: string;
+  /** Structured address parts, used for schema.org markup */
+  streetAddress: string;
+  locality: string;
+  postalCode: string;
   image: StaticImageData;
   tone: Extract<CardTone, "peach" | "primary" | "secondary">;
 };

@@ -28,12 +28,13 @@ export function Locations() {
                 <Image
                   src={image}
                   alt={`Tampak cabang ${name}`}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 448px"
                   className="aspect-4/3 w-full rounded-xl object-cover"
                 />
-                <h3 className={cn("text-center text-2xl lg:text-3xl", styles.title)}>
+                <h3 className={cn("text-center", styles.title)}>
                   Cabang <strong className="font-bold">{name}</strong>
                 </h3>
-                <p className={cn("flex-1 text-center text-base lg:text-xl", styles.description)}>{address}</p>
+                <p className={cn("flex-1 text-center text-sm lg:text-base", styles.description)}>{address}</p>
                 <Button href={getMapsUrl(address)} variant={styles.button} size="md" className="w-full">
                   Buka di Google Maps
                 </Button>

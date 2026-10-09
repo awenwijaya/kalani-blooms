@@ -19,7 +19,6 @@
 
   --container-page: 107.5rem; /* 1640px content + 2 x 40px gutter */
   --tracking-eyebrow: 0.08em;
-  --leading-display: 1.3;
 }
 
 @layer base {
@@ -28,13 +27,64 @@
   }
 
   body {
-    @apply bg-cream font-body text-body antialiased;
+    @apply type-body bg-cream font-body text-body antialiased;
   }
 
   h1,
   h2,
   h3 {
     @apply font-heading font-normal text-primary;
+  }
+
+  h1 {
+    @apply type-h1;
+  }
+
+  h2 {
+    @apply type-h2;
+  }
+
+  h3 {
+    @apply type-h3;
+  }
+}
+
+/* Typography scale: mobile first, desktop from lg (1024px) */
+@utility type-h1 {
+  font-size: 2rem; /* 32px */
+  line-height: 1.25;
+
+  @media (width >= 64rem) {
+    font-size: 3rem; /* 48px */
+    line-height: 1.2;
+  }
+}
+
+@utility type-h2 {
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.3;
+
+  @media (width >= 64rem) {
+    font-size: 1.875rem; /* 30px */
+  }
+}
+
+@utility type-h3 {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.4;
+
+  @media (width >= 64rem) {
+    font-size: 1.25rem; /* 20px */
+  }
+}
+
+@utility type-body {
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+
+  @media (width >= 64rem) {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.7;
   }
 }
 

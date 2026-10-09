@@ -7,6 +7,7 @@ type DecorationProps = {
   className?: string;
 };
 
+/** Large background shapes (rings, blurred blobs). Hidden on mobile to keep it clean. */
 export function Decoration({ src, className }: DecorationProps) {
   return (
     <Image

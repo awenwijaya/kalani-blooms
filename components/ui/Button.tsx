@@ -4,12 +4,12 @@ import { cn } from "@/lib/cn";
 
 const variants = {
   primary: "bg-primary text-white hover:bg-primary/90",
-  secondary: "bg-secondary text-white hover:bg-secondary/90"
+  secondary: "bg-secondary text-white hover:bg-secondary/90",
 } as const;
 
 const sizes = {
-  md: "h-12 font-body text-base lg:text-xl",
-  lg: "h-14 font-heading text-xl lg:h-22 lg:text-4xl",
+  md: "h-12 font-body text-base",
+  lg: "h-12 font-heading text-lg lg:h-14 lg:text-xl",
 } as const;
 
 export type ButtonVariant = keyof typeof variants;
