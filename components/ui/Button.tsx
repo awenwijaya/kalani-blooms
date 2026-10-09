@@ -32,6 +32,15 @@ export function Button({ href, children, variant = "primary", size = "lg", class
     className,
   );
 
+  // In-page anchors use a plain <a> so the browser handles smooth scrolling and scroll-padding natively
+  if (href.startsWith("#")) {
+    return (
+      <a href={href} className={styles}>
+        {children}
+      </a>
+    );
+  }
+
   if (href.startsWith("http")) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className={styles}>

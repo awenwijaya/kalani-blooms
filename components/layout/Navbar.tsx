@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { logo } from "@/assets";
 import { Container } from "@/components/ui/Container";
 import { CloseIcon, MenuIcon } from "@/components/ui/icons";
@@ -11,26 +10,66 @@ import { cn } from "@/lib/cn";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeHref, setActiveHref] = useState(navigation[0].href);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Highlight the menu item of the section that is crossing the middle of the viewport
+    const sections = navigation
+      .map(({ href }) => document.querySelector(href))
+      .filter((section): section is Element => section !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveHref(`#${entry.target.id}`);
+        });
+      },
+      { rootMargin: "-40% 0px -55% 0px" },
+    );
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
+  }, []);
 
   return (
-    <header className="relative z-20 bg-cream/80 py-5 backdrop-blur-sm lg:py-8">
+    <header
+      className={cn(
+        "sticky top-0 z-50 flex h-(--header-height) items-center bg-cream/90 backdrop-blur-sm transition-shadow",
+        isScrolled && "shadow-sm",
+      )}
+    >
       <Container className="flex items-center justify-between">
-        <Link href="#beranda" aria-label="Kalani Blooms - Beranda">
-          <Image src={logo} alt="Kalani Blooms" priority sizes="(min-width: 1024px) 216px, 144px" className="h-auto w-36 lg:w-54" />
-        </Link>
+        <a href="#beranda" aria-label="Kalani Blooms - Beranda">
+          <Image
+            src={logo}
+            alt="Kalani Blooms"
+            priority
+            sizes="(min-width: 1024px) 218px, 144px"
+            className="h-auto w-36 lg:w-54.5"
+          />
+        </a>
 
         <nav aria-label="Navigasi utama" className="hidden items-center gap-8 md:flex lg:gap-14">
-          {navigation.map(({ label, href }, index) => (
-            <Link
+          {navigation.map(({ label, href }) => (
+            <a
               key={href}
               href={href}
+              aria-current={activeHref === href ? "location" : undefined}
               className={cn(
                 "font-heading text-base transition-colors hover:text-primary lg:text-lg",
-                index === 0 ? "font-semibold text-primary" : "text-secondary",
+                activeHref === href ? "font-semibold text-primary" : "text-secondary",
               )}
             >
               {label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -52,18 +91,18 @@ export function Navbar() {
           aria-label="Navigasi utama"
           className="absolute inset-x-0 top-full flex flex-col gap-1 bg-cream px-5 pb-5 shadow-lg md:hidden"
         >
-          {navigation.map(({ label, href }, index) => (
-            <Link
+          {navigation.map(({ label, href }) => (
+            <a
               key={href}
               href={href}
               onClick={() => setIsOpen(false)}
               className={cn(
                 "py-2 font-heading text-lg",
-                index === 0 ? "font-semibold text-primary" : "text-secondary",
+                activeHref === href ? "font-semibold text-primary" : "text-secondary",
               )}
             >
               {label}
-            </Link>
+            </a>
           ))}
         </nav>
       )}

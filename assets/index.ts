@@ -26,3 +26,6 @@ export const starFill = image("/svg/star-fill.svg", 62, 62);
 export const ellipseFilled = image("/svg/ellipse-filled.svg", 1303, 1861);
 export const ellipseOutlined = image("/svg/ellipse-outlined.svg", 320, 1480);
 export const ellipseOutlinedLight = image("/svg/ellipse-outlined-light.svg", 624, 949);
+export const decorOne = image("/svg/decor-1.svg", 1303, 1861);
+export const decorTwo = image("/svg/decor-2.svg", 631, 2199);
+export const decorThree = image("/svg/decor-3.svg", 919, 2199);

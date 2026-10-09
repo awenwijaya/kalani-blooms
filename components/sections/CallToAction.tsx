@@ -1,18 +1,19 @@
 import Image from "next/image";
-import { ellipseFilled, heroOne, logoTagline } from "@/assets";
+import { heroOne, logoTagline } from "@/assets";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Decoration, Sparkle } from "@/components/ui/Decoration";
+import { Glow, Sparkle } from "@/components/ui/Decoration";
 import { socialIcons } from "@/components/ui/icons";
 import { siteConfig, socials } from "@/data/site";
 
 export function CallToAction() {
   return (
-    <section id="order" className="relative isolate overflow-hidden py-16 lg:py-28">
-      <Decoration src={ellipseFilled} className="-bottom-40 -left-64 w-250" />
-      <Sparkle className="left-1/2 top-1/4 hidden lg:block" />
-      <Sparkle className="bottom-1/3 left-1/2 hidden lg:block" />
-      <Sparkle className="bottom-6 right-6 lg:right-12" />
+    <section id="order" className="relative isolate py-16 lg:py-28">
+      <Glow className="-left-121 top-2" />
+      <Glow className="-right-90 top-195" />
+      <Sparkle size="md" className="left-9/20 top-109 hidden lg:block" />
+      <Sparkle size="md" className="left-1/2 top-54 hidden lg:block" />
+      <Sparkle size="md" className="bottom-12 right-23 hidden md:block" />
 
       <Container className="grid items-center gap-10 lg:grid-cols-2">
         <div className="flex flex-col items-center gap-4">

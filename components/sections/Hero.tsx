@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ellipseFilled, ellipseOutlinedLight, heroBg, heroOne, logoTagline } from "@/assets";
+import { decorOne, decorTwo, heroBg, heroOne, logoTagline } from "@/assets";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Decoration, Sparkle } from "@/components/ui/Decoration";
@@ -7,12 +7,13 @@ import { siteConfig } from "@/data/site";
 
 export function Hero() {
   return (
-    <section id="beranda" className="relative isolate overflow-hidden">
-      <Decoration src={ellipseFilled} className="-left-64 -top-40 w-250" />
-      <Decoration src={ellipseOutlinedLight} className="-left-32 -top-24 w-180" />
-      <Sparkle size="sm" className="left-1/3 top-12 hidden lg:block" />
-      <Sparkle size="sm" className="right-6 top-12 lg:right-12" />
-      <Sparkle size="md" className="bottom-6 right-1/4 hidden md:block" />
+    <section id="beranda" className="relative isolate">
+      <Decoration src={decorOne} className="-top-20 left-0" />
+      <Decoration src={decorTwo} className="right-0 top-93" />
+      <Sparkle size="sm" className="left-1/3 top-54 hidden md:block" />
+      <Sparkle size="sm" className="right-6 top-4 md:right-34 md:top-54" />
+      <Sparkle size="md" className="-bottom-4 left-3/4 hidden md:block" />
+      <Sparkle size="sm" className="bottom-8 left-5/6 hidden md:block" />
 
       <Container className="grid items-center gap-10 pb-16 pt-6 lg:grid-cols-2 lg:pb-28 lg:pt-12">
         <div className="flex max-w-3xl flex-col gap-6">
@@ -36,7 +37,7 @@ export function Hero() {
             </p>
           </div>
 
-          <Button href={siteConfig.orderUrl} className="w-full">
+          <Button href={siteConfig.orderSectionHref} className="w-full">
             Pesan Sekarang
           </Button>
         </div>

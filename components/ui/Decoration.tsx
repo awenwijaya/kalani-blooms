@@ -19,6 +19,16 @@ export function Decoration({ src, className }: DecorationProps) {
   );
 }
 
+/** Soft blurred blush circle (1100px) used behind the order section */
+export function Glow({ className }: { className?: string }) {
+  return (
+    <div
+      aria-hidden
+      className={cn("pointer-events-none absolute -z-10 hidden size-275 rounded-full bg-blush/35 blur-glow md:block", className)}
+    />
+  );
+}
+
 const sparkleSizes = {
   sm: "size-5 lg:size-9",
   md: "size-10 lg:size-16",

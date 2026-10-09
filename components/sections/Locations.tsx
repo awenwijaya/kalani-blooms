@@ -1,7 +1,8 @@
 import Image from "next/image";
+import { decorThree } from "@/assets";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Sparkle } from "@/components/ui/Decoration";
+import { Decoration, Sparkle } from "@/components/ui/Decoration";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { cardTones } from "@/components/ui/card-tones";
 import { branches } from "@/data/branches";
@@ -10,11 +11,12 @@ import { getMapsUrl } from "@/lib/maps";
 
 export function Locations() {
   return (
-    <section id="temukan-kami" className="relative isolate overflow-hidden py-16 lg:py-28">
-      <Sparkle className="left-6 top-1/3 hidden md:block" />
-      <Sparkle className="right-6 top-1/2 hidden md:block" />
-      <Sparkle className="bottom-8 left-12 hidden md:block" />
-      <Sparkle className="bottom-8 right-12 hidden md:block" />
+    <section id="temukan-kami" className="relative isolate py-16 lg:py-28">
+      <Decoration src={decorThree} className="-top-46 right-0" />
+      <Sparkle size="md" className="left-8 top-63 hidden md:block" />
+      <Sparkle size="md" className="right-8 top-98 hidden md:block" />
+      <Sparkle size="md" className="left-24 top-210 hidden md:block" />
+      <Sparkle size="md" className="right-9 top-218 hidden md:block" />
 
       <Container>
         <SectionHeading title="Temukan Kami" />

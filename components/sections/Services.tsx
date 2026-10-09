@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ellipseOutlined, heroBg, heroTwo } from "@/assets";
+import { decorTwo, heroBg, heroTwo } from "@/assets";
 import { Container } from "@/components/ui/Container";
 import { Decoration, Sparkle } from "@/components/ui/Decoration";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -33,11 +33,13 @@ export function Services() {
   const rightServices = services.filter(({ column }) => column === "right");
 
   return (
-    <section id="layanan" className="relative isolate overflow-hidden py-16 lg:py-28">
-      <Decoration src={ellipseOutlined} className="-right-24 top-0 w-120" />
-      <Sparkle className="left-1/4 top-1/2 hidden xl:block" />
-      <Sparkle className="right-1/4 top-1/3 hidden xl:block" />
-      <Sparkle className="bottom-6 right-6 lg:right-12" />
+    <section id="layanan" className="relative isolate py-16 lg:py-28">
+      <Decoration src={decorTwo} className="left-0 top-240 -scale-x-100" />
+      <Sparkle size="sm" className="left-1/4 top-125 hidden xl:block" />
+      <Sparkle size="md" className="left-2/3 top-144 hidden xl:block" />
+      <Sparkle size="sm" className="left-3/10 top-187 hidden xl:block" />
+      <Sparkle size="sm" className="bottom-12 left-1/2 hidden xl:block" />
+      <Sparkle size="md" className="bottom-0 right-31 hidden md:block" />
 
       <Container>
         <SectionHeading eyebrow="Layanan Kami" title="Mari Wujudkan Momen Spesialmu" />

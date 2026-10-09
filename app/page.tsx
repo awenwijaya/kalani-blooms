@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main id="konten">
+      <main id="konten" className="overflow-clip">
         <Hero />
         <Services />
         <Collection />
