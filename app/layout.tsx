@@ -1,31 +1,25 @@
 import type { Metadata } from "next";
-import { Jost } from "next/font/google";
-import { Poppins } from "next/font/google";
+import { Jost, Poppins } from "next/font/google";
 import "./globals.css";
 
-const jost = Jost({
-  variable: "--font-jost",
-  subsets: ["latin"],
-})
-
+const jost = Jost({ subsets: ["latin"], variable: "--font-jost", display: "swap" });
 const poppins = Poppins({
-  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: "400",
+  variable: "--font-poppins",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Kalani Blooms",
-  description: "Florist di Bali untuk buket bunga segar & artificial. Cocok untuk ulang tahun, wisuda, dan anniversary. Pesan custom sesuai warna dan budget.",
+  title: "Kalani Blooms | Gift & Flower Gallery",
+  description:
+    "Florist di Bali untuk buket bunga segar dan artificial, custom bouquet, standing flower, hingga pengantaran bunga.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="id"
-      className={`${jost.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="id" className={`${jost.variable} ${poppins.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

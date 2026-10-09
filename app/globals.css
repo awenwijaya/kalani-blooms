@@ -1,16 +1,47 @@
 @import "tailwindcss";
 
+/* Font families are injected as CSS variables by next/font (see layout.tsx) */
 @theme inline {
-  --font-sans: var(--font-jost);
-  --font-body: var(--font-poppins), var(--font-jost);
-
-  --color-cream: #fff8f2;
-  --color-maroon: #4f0d19;
-  --color-mocha: #ad8074;
-  --color-ink: #303030;
-  --color-coral: #ff7f7f;
+  --font-heading: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
-body {
-  background: var(--color-cream);
+/* Design tokens taken from the Figma file */
+@theme {
+  --color-primary: #4f0d19;
+  --color-secondary: #d4a092;
+  --color-cream: #fff8f2;
+  --color-peach: #ffe2d1;
+  --color-brown: #6e3511;
+  --color-ink: #303030;
+  --color-body: #795c54;
+  --color-caption: #86655d;
+
+  --container-page: 107.5rem; /* 1640px content + 2 x 40px gutter */
+  --tracking-eyebrow: 0.08em;
+  --leading-display: 1.3;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-body text-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading font-normal text-primary;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
