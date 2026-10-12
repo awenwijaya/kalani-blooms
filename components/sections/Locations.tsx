@@ -11,8 +11,8 @@ import { getMapsUrl } from "@/lib/maps";
 
 export function Locations() {
   return (
-    <section id="temukan-kami" className="relative isolate py-16 lg:py-28">
-      <Decoration src={decorThree} className="-top-46 right-0" />
+    <section id="temukan-kami" className="relative isolate py-16 lg:py-20 2xl:py-28">
+      <Decoration src={decorThree} className="-top-46 right-0 opacity-30" />
       <Sparkle size="md" className="left-8 top-63 hidden md:block" />
       <Sparkle size="md" className="right-8 top-98 hidden md:block" />
       <Sparkle size="md" className="left-24 top-210 hidden md:block" />
@@ -21,7 +21,7 @@ export function Locations() {
       <Container>
         <SectionHeading title="Temukan Kami" />
 
-        <div className="mx-auto mt-10 grid max-w-md gap-6 sm:max-w-none sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-md gap-6 sm:max-w-none sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 2xl:mt-16">
           {branches.map(({ name, address, image, tone }) => {
             const styles = cardTones[tone];
 
@@ -36,7 +36,7 @@ export function Locations() {
                 <h3 className={cn("text-center", styles.title)}>
                   Cabang <strong className="font-bold">{name}</strong>
                 </h3>
-                <p className={cn("flex-1 text-center text-sm lg:text-base", styles.description)}>{address}</p>
+                <p className={cn("flex-1 text-center text-sm 2xl:text-base", styles.description)}>{address}</p>
                 <Button href={getMapsUrl(address)} variant={styles.button} size="md" className="w-full">
                   Buka di Google Maps
                 </Button>

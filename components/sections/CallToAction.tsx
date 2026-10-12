@@ -8,7 +8,7 @@ import { siteConfig, socials } from "@/data/site";
 
 export function CallToAction() {
   return (
-    <section id="order" className="relative isolate py-16 lg:py-28">
+    <section id="order" className="relative isolate py-16 lg:py-20 2xl:py-28">
       <Glow className="-left-121 top-2" />
       <Glow className="-right-90 top-195" />
       <Sparkle size="md" className="left-9/20 top-109 hidden lg:block" />
@@ -20,14 +20,14 @@ export function CallToAction() {
           <Image
             src={heroOne}
             alt="Buket bunga lily dan anyelir dengan wrapping pink"
-            sizes="(min-width: 1024px) 512px, 320px"
-            className="h-auto w-64 sm:w-80 lg:w-lg"
+            sizes="(min-width: 1536px) 500px, (min-width: 1024px) 384px, 320px"
+            className="h-auto w-64 sm:w-80 lg:w-96 2xl:w-125"
           />
           <Image
             src={logoTagline}
             alt="Kalani Blooms - Gift & Flower Gallery"
-            sizes="(min-width: 1024px) 768px, 288px"
-            className="h-auto w-72 lg:w-3xl" />
+            sizes="(min-width: 1536px) 732px, (min-width: 1024px) 516px, 280px"
+            className="h-auto w-70 lg:w-129 2xl:w-183" />
         </div>
 
         <div className="flex flex-col items-center gap-6 text-center lg:items-end lg:text-right">
@@ -50,7 +50,7 @@ export function CallToAction() {
 
                 return (
                   <Button key={platform} href={href} variant="secondary">
-                    <Icon className="size-6 text-primary lg:size-7" />
+                    <Icon className="size-6 text-primary 2xl:size-7" />
                     {handle}
                   </Button>
                 );

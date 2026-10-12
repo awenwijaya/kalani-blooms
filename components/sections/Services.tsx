@@ -14,29 +14,56 @@ const alignStyles = {
   end: "xl:self-end",
 } as const;
 
-// Below xl the cards use a simple 2-column grid; the 3-column staggered layout needs the extra width
-const columnStyles = "contents xl:flex xl:flex-col xl:justify-between xl:gap-6";
+type Alignment = keyof typeof alignStyles;
 
-function ServiceCard({ title, description, tone, align }: Service) {
+// Zig-zag per column, mirrored left/right so the layout stays symmetric around the photo:
+// the outermost cards touch the container edges (same margin as the navbar), the innermost sit next to the photo.
+const staggerPattern: Record<Service["column"], Alignment[]> = {
+  left: ["end", "start", "center", "end"],
+  right: ["start", "end", "center", "start"],
+};
+
+// md and below: image on top + 2-column cards. lg and up: image always centered between two card columns.
+// The zig-zag stagger only kicks in from xl, where the columns are wide enough.
+const columnStyles = "contents lg:flex lg:flex-col lg:justify-between lg:gap-6";
+
+type ServiceCardProps = Pick<Service, "title" | "description" | "tone"> & { align: Alignment };
+
+function ServiceCard({ title, description, tone, align }: ServiceCardProps) {
   const styles = cardTones[tone];
 
   return (
-    <article className={cn("flex w-full flex-col gap-3 rounded-3xl px-8 py-6 xl:w-4/5", styles.surface, alignStyles[align])}>
+    <article className={cn("flex w-full flex-col gap-3 rounded-3xl px-6 py-6 xl:w-4/5 xl:px-8", styles.surface, alignStyles[align])}>
       <h3 className={styles.title}>{title}</h3>
-      <p className={cn("text-sm lg:text-base", styles.description)}>{description}</p>
+      <p className={cn("text-sm 2xl:text-base", styles.description)}>{description}</p>
     </article>
   );
 }
 
-export function Services() {
-  const leftServices = services.filter(({ column }) => column === "left");
-  const rightServices = services.filter(({ column }) => column === "right");
+function ServiceColumn({ column, className }: { column: Service["column"]; className: string }) {
+  const pattern = staggerPattern[column];
+  const columnServices = services.filter((service) => service.column === column);
 
   return (
-    <section id="layanan" className="relative isolate py-16 lg:py-28">
+    <div className={cn(columnStyles, className)}>
+      {columnServices.map(({ title, description, tone }, index) => (
+        <ServiceCard
+          key={title}
+          title={title}
+          description={description}
+          tone={tone}
+          align={pattern[index % pattern.length]}
+        />
+      ))}
+    </div>
+  );
+}
+
+export function Services() {
+  return (
+    <section id="layanan" className="relative isolate py-16 lg:py-20 2xl:py-28">
       <Decoration src={decorTwo} className="left-0 top-240 -scale-x-100" />
       <Sparkle size="sm" className="left-1/4 top-125 hidden xl:block" />
-      <Sparkle size="md" className="left-2/3 top-144 hidden xl:block" />
       <Sparkle size="sm" className="left-3/10 top-187 hidden xl:block" />
       <Sparkle size="sm" className="bottom-12 left-1/2 hidden xl:block" />
       <Sparkle size="md" className="bottom-0 right-31 hidden md:block" />
@@ -44,28 +71,20 @@ export function Services() {
       <Container>
         <SectionHeading eyebrow="Layanan Kami" title="Mari Wujudkan Momen Spesialmu" />
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-16 xl:grid-cols-3 xl:gap-6">
-          <div className="relative order-first mx-auto w-full max-w-md sm:col-span-2 xl:order-none xl:col-span-1 xl:col-start-2 xl:row-start-1 xl:self-center">
-            <Image src={heroBg} alt="" aria-hidden sizes="(min-width: 1280px) 33vw, 448px" className="absolute inset-0 size-full object-contain" />
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-6 2xl:mt-16">
+          <div className="relative order-first mx-auto w-full max-w-md sm:col-span-2 lg:order-none lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:self-center">
+            <Sparkle size="md" className="-top-10 right-10 hidden xl:block" />
+            <Image src={heroBg} alt="" aria-hidden sizes="(min-width: 1024px) 33vw, 448px" className="absolute inset-0 size-full object-contain" />
             <Image
               src={heroTwo}
               alt="Buket bunga gerbera dan krisan dengan kartu ucapan"
-              sizes="(min-width: 1280px) 33vw, 448px"
+              sizes="(min-width: 1024px) 33vw, 448px"
               className="relative h-auto w-full"
             />
           </div>
 
-          <div className={cn(columnStyles, "xl:col-start-1 xl:row-start-1")}>
-            {leftServices.map((service) => (
-              <ServiceCard key={service.title} {...service} />
-            ))}
-          </div>
-
-          <div className={cn(columnStyles, "xl:col-start-3 xl:row-start-1")}>
-            {rightServices.map((service) => (
-              <ServiceCard key={service.title} {...service} />
-            ))}
-          </div>
+          <ServiceColumn column="left" className="lg:col-start-1 lg:row-start-1" />
+          <ServiceColumn column="right" className="lg:col-start-3 lg:row-start-1" />
         </div>
       </Container>
     </section>

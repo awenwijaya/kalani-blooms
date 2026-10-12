@@ -6,13 +6,13 @@ import { CollectionCarousel } from "./CollectionCarousel";
 
 export function Collection() {
   return (
-    <section id="koleksi" className="relative isolate py-16 lg:py-28">
+    <section id="koleksi" className="relative isolate py-16 lg:py-20 2xl:py-28">
       <Sparkle size="md" className="bottom-4 left-1/3 hidden md:block" />
 
       <Container>
         <SectionHeading eyebrow="Koleksi" title="Ragam Kreasi Kalani Blooms" />
 
-        <div className="mt-10 lg:mt-16">
+        <div className="mt-10 lg:mt-12 2xl:mt-16">
           <CollectionCarousel items={collection} />
         </div>
       </Container>

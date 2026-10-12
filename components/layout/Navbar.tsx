@@ -42,8 +42,12 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 flex h-(--header-height) items-center bg-cream/90 backdrop-blur-sm transition-shadow",
-        isScrolled && "shadow-sm",
+        // Fixed bar: at the very top it is transparent with Figma-like spacing above the logo;
+        // after scrolling it shrinks and gets the blurred background + shadow
+        "fixed inset-x-0 top-0 z-50 flex items-center transition-all duration-300",
+        isScrolled
+          ? "h-(--header-height) bg-cream/90 shadow-sm backdrop-blur-sm"
+          : "h-(--header-top-height) pt-2 lg:pt-5",
       )}
     >
       <Container className="flex items-center justify-between">
@@ -52,19 +56,19 @@ export function Navbar() {
             src={logo}
             alt="Kalani Blooms"
             priority
-            sizes="(min-width: 1024px) 218px, 144px"
-            className="h-auto w-36 lg:w-54.5"
+            sizes="(min-width: 1536px) 200px, (min-width: 1024px) 160px, 132px"
+            className="h-auto w-33 lg:w-40 2xl:w-50"
           />
         </a>
 
-        <nav aria-label="Navigasi utama" className="hidden items-center gap-8 md:flex lg:gap-14">
+        <nav aria-label="Navigasi utama" className="hidden items-center gap-8 md:flex lg:gap-10 2xl:gap-14">
           {navigation.map(({ label, href }) => (
             <a
               key={href}
               href={href}
               aria-current={activeHref === href ? "location" : undefined}
               className={cn(
-                "font-heading text-base transition-colors hover:text-primary lg:text-lg",
+                "font-heading text-base transition-colors hover:text-primary 2xl:text-lg",
                 activeHref === href ? "font-semibold text-primary" : "text-secondary",
               )}
             >

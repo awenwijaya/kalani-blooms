@@ -30,8 +30,8 @@ export function Glow({ className }: { className?: string }) {
 }
 
 const sparkleSizes = {
-  sm: "size-5 lg:size-9",
-  md: "size-10 lg:size-16",
+  sm: "size-1.25 lg:size-5.25",
+  md: "size-6.25 lg:size-12.25",
 } as const;
 
 type SparkleProps = {

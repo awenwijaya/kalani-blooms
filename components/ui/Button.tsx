@@ -9,7 +9,7 @@ const variants = {
 
 const sizes = {
   md: "h-12 font-body text-base",
-  lg: "h-12 font-heading text-lg lg:h-14 lg:text-xl",
+  lg: "h-12 font-heading text-lg 2xl:h-14 2xl:text-xl",
 } as const;
 
 export type ButtonVariant = keyof typeof variants;

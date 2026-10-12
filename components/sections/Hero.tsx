@@ -7,17 +7,19 @@ import { siteConfig } from "@/data/site";
 
 export function Hero() {
   return (
-    <section id="beranda" className="relative isolate">
-      <Decoration src={decorOne} className="-top-20 left-0" />
-      <Decoration src={decorTwo} className="right-0 top-93" />
-      <Sparkle size="sm" className="left-1/3 top-54 hidden md:block" />
-      <Sparkle size="sm" className="right-6 top-4 md:right-34 md:top-54" />
+    <section id="beranda" className="relative isolate pt-(--header-top-height)">
+      <Decoration src={decorOne} className="left-0 top-0" />
+      <Decoration src={decorTwo} className="right-0 top-113" />
+      <Sparkle size="sm" className="right-6 top-24 md:right-34 md:top-74" />
       <Sparkle size="md" className="-bottom-4 left-3/4 hidden md:block" />
       <Sparkle size="sm" className="bottom-8 left-5/6 hidden md:block" />
 
-      <Container className="grid items-center gap-10 pb-16 pt-6 lg:grid-cols-2 lg:pb-28 lg:pt-12">
+      <Container className="grid items-center gap-10 pb-16 pt-6 lg:grid-cols-2 lg:pb-20 lg:pt-8 2xl:pb-28 2xl:pt-12">
         <div className="flex max-w-3xl flex-col gap-6">
-          <Image src={logoTagline} alt="Kalani Blooms - Gift & Flower Gallery" sizes="(min-width: 1024px) 432px, 256px" className="h-auto w-64 lg:w-108" />
+          <div className="relative w-fit">
+            <Sparkle size="sm" className="-right-4 -top-10 hidden md:block" />
+            <Image src={logoTagline} alt="Kalani Blooms - Gift & Flower Gallery" sizes="(min-width: 1536px) 424px, (min-width: 1024px) 312px, 248px" className="h-auto w-62 lg:w-78 2xl:w-106" />
+          </div>
 
           <h1>
             Every Flower <span className="text-secondary">Matters</span>
@@ -42,13 +44,13 @@ export function Hero() {
           </Button>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none lg:justify-self-end">
-          <Image src={heroBg} alt="" aria-hidden sizes="(min-width: 1024px) 45vw, 90vw" className="absolute -top-4 right-0 h-auto w-9/10" />
+        <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-lg lg:justify-self-end 2xl:max-w-2xl">
+          <Image src={heroBg} alt="" aria-hidden sizes="(min-width: 1024px) 460px, 90vw" className="absolute -top-4 right-0 h-auto w-9/10" />
           <Image
             src={heroOne}
             alt="Buket bunga lily dan anyelir dengan wrapping pink"
             priority
-            sizes="(min-width: 1024px) 50vw, 448px"
+            sizes="(min-width: 1536px) 672px, (min-width: 1024px) 512px, 448px"
             className="relative h-auto w-full"
           />
         </div>
