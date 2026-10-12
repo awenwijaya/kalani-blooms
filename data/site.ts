@@ -49,6 +49,6 @@ export const navigation: NavItem[] = [
 ];
 
 export const socials: Social[] = [
-  { platform: "instagram", handle: "kalani.blooms", href: "https://www.instagram.com/kalani.blooms" },
-  { platform: "tiktok", handle: "kalani.blooms", href: "https://www.tiktok.com/@kalani.blooms" },
+  { platform: "instagram", handle: "kalani.blooms", href: "https://www.instagram.com/kalani.blooms?stkn=MXg1ZGJmamlpNnFkaA==" },
+  { platform: "tiktok", handle: "kalani.blooms", href: "https://www.tiktok.com/@kalaniblooms?_r=1&_t=ZS-9ALsoCgc5pf" },
 ];
