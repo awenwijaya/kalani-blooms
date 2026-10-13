@@ -14,11 +14,13 @@ export function CollectionCarousel({ items }: CollectionCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [pageCount, setPageCount] = useState(items.length);
 
+  // Distance between two slides, measured from the DOM so it stays correct at every breakpoint
   const getStep = useCallback(() => {
     const [first, second] = Array.from(trackRef.current?.children ?? []) as HTMLElement[];
     return first && second ? second.offsetLeft - first.offsetLeft : (first?.offsetWidth ?? 1);
   }, []);
 
+  // Only as many dots as there are reachable scroll positions (depends on how many slides fit on screen)
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -47,6 +49,7 @@ export function CollectionCarousel({ items }: CollectionCarouselProps) {
 
   return (
     <div className="flex flex-col gap-9">
+      {/* -mx-3 cancels the slide padding so the first/last image edges line up with the page container */}
       <ul
         ref={trackRef}
         onScroll={handleScroll}

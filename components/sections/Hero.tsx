@@ -10,7 +10,7 @@ export function Hero() {
     <section id="beranda" className="relative isolate pt-(--header-top-height)">
       <Decoration src={decorOne} className="left-0 top-0" />
       <Decoration src={decorTwo} className="right-0 top-113" />
-      <Sparkle size="sm" className="right-6 top-24 md:right-34 md:top-74" />
+      <Sparkle size="sm" className="right-6 top-24 lg:right-34 lg:top-74" />
       <Sparkle size="md" className="-bottom-4 left-3/4 hidden md:block" />
       <Sparkle size="sm" className="bottom-8 left-5/6 hidden md:block" />
 

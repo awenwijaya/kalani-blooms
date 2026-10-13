@@ -9,11 +9,12 @@ import { siteConfig, socials } from "@/data/site";
 export function CallToAction() {
   return (
     <section id="order" className="relative isolate py-16 lg:py-20 2xl:py-28">
+      <Sparkle size="md" className="left-1/2 top-4 hidden md:block" />
+      <Sparkle size="md" className="right-24 top-4 hidden md:block" />
+      <Sparkle size="md" className="bottom-4 left-1/3 hidden md:block" />
+      <Sparkle size="md" className="bottom-4 right-12 hidden md:block" />
       <Glow className="-left-121 top-2" />
       <Glow className="-right-90 top-195" />
-      <Sparkle size="md" className="left-9/20 top-109 hidden lg:block" />
-      <Sparkle size="md" className="left-1/2 top-54 hidden lg:block" />
-      <Sparkle size="md" className="bottom-12 right-23 hidden md:block" />
 
       <Container className="grid items-center gap-10 lg:grid-cols-2">
         <div className="flex flex-col items-center gap-4">
