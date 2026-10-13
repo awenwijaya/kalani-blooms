@@ -12,8 +12,6 @@ export type Service = {
   description: string;
   tone: CardTone;
   column: "left" | "right";
-  /** Desktop-only horizontal position inside its column (recreates the staggered Figma layout) */
-  align: "start" | "center" | "end";
 };
 
 export type CollectionItem = {
