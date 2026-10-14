@@ -12,11 +12,11 @@ import { getMapsUrl } from "@/lib/maps";
 export function Locations() {
   return (
     <section id="temukan-kami" className="relative isolate py-16 lg:py-20 2xl:py-28">
-      <Sparkle size="md" className="left-12 top-4 hidden md:block" />
-      <Sparkle size="md" className="right-1/4 top-4 hidden md:block" />
-      <Sparkle size="md" className="bottom-4 left-24 hidden md:block" />
-      <Sparkle size="md" className="bottom-4 right-12 hidden md:block" />
-      <Decoration src={decorThree} className="-top-46 right-0 opacity-30" />
+      <Sparkle size="md" className="left-12 top-4" />
+      <Sparkle size="md" className="right-1/4 top-4" />
+      <Sparkle size="md" className="bottom-4 left-24" />
+      <Sparkle size="md" className="bottom-4 right-12" />
+      <Decoration src={decorThree} className="-top-24 right-0 w-115 opacity-30 md:-top-46 md:w-230" />
 
       <Container>
         <SectionHeading title="Temukan Kami" />

@@ -62,17 +62,17 @@ function ServiceColumn({ column, className }: { column: Service["column"]; class
 export function Services() {
   return (
     <section id="layanan" className="relative isolate py-16 lg:py-20 2xl:py-28">
-      <Sparkle size="md" className="right-1/4 top-4 hidden md:block" />
-      <Sparkle size="sm" className="bottom-4 left-1/2 hidden md:block" />
-      <Sparkle size="md" className="bottom-4 right-8 hidden md:block" />
-      <Decoration src={decorTwo} className="left-0 top-240 -scale-x-100" />
+      <Sparkle size="md" className="right-1/4 top-4" />
+      <Sparkle size="sm" className="bottom-4 left-1/2" />
+      <Sparkle size="md" className="bottom-4 right-8" />
+      <Decoration src={decorTwo} className="left-0 top-1/2 w-80 -scale-x-100 md:top-240 md:w-158" />
 
       <Container>
         <SectionHeading eyebrow="Layanan Kami" title="Mari Wujudkan Momen Spesialmu" />
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-6 2xl:mt-16">
           <div className="relative order-first mx-auto w-full max-w-md sm:col-span-2 lg:order-none lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:self-center">
-            <Sparkle size="md" className="-top-8 right-10 hidden lg:block" />
+            <Sparkle size="md" className="-top-8 right-10" />
             <Image src={heroBg} alt="" aria-hidden sizes="(min-width: 1024px) 33vw, 448px" className="absolute inset-0 size-full object-contain" />
             <Image
               src={heroTwo}

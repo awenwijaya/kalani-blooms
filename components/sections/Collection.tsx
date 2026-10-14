@@ -6,8 +6,9 @@ import { CollectionCarousel } from "./CollectionCarousel";
 
 export function Collection() {
   return (
-    <section id="koleksi" className="relative isolate py-16 lg:py-20 2xl:py-28">
-      <Sparkle size="md" className="bottom-4 left-1/3 hidden md:block" />
+    <section id="koleksi" className="relative isolate bg-linear-244 from-rose-soft/5 to-cream/10 py-16 lg:py-20 2xl:py-28">
+      <Sparkle size="md" className="bottom-4 left-1/3" />
+      <Sparkle size="md" className="right-1/4 top-4" />
 
       <Container>
         <SectionHeading eyebrow="Koleksi" title="Ragam Kreasi Kalani Blooms" />
