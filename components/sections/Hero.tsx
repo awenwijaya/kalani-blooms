@@ -8,16 +8,16 @@ import { siteConfig } from "@/data/site";
 export function Hero() {
   return (
     <section id="beranda" className="relative isolate pt-(--header-top-height)">
-      <Decoration src={decorOne} className="left-0 top-0" />
-      <Decoration src={decorTwo} className="right-0 top-113" />
+      <Decoration src={decorOne} className="left-0 top-0 w-180 md:w-325" />
+      <Decoration src={decorTwo} className="right-0 top-56 w-80 md:top-113 md:w-158" />
       <Sparkle size="sm" className="right-6 top-24 lg:right-34 lg:top-74" />
-      <Sparkle size="md" className="-bottom-4 left-3/4 hidden md:block" />
-      <Sparkle size="sm" className="bottom-8 left-5/6 hidden md:block" />
+      <Sparkle size="md" className="-bottom-4 left-3/4" />
+      <Sparkle size="sm" className="bottom-8 left-5/6" />
 
       <Container className="grid items-center gap-10 pb-16 pt-6 lg:grid-cols-2 lg:pb-20 lg:pt-8 2xl:pb-28 2xl:pt-12">
         <div className="flex max-w-3xl flex-col gap-6">
           <div className="relative w-fit">
-            <Sparkle size="sm" className="-right-4 -top-10 hidden md:block" />
+            <Sparkle size="sm" className="-right-4 -top-10" />
             <Image src={logoTagline} alt="Kalani Blooms - Gift & Flower Gallery" sizes="(min-width: 1536px) 424px, (min-width: 1024px) 312px, 248px" className="h-auto w-62 lg:w-78 2xl:w-106" />
           </div>
 
