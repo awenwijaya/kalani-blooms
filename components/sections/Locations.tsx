@@ -21,12 +21,12 @@ export function Locations() {
       <Container>
         <SectionHeading title="Temukan Kami" />
 
-        <div className="mx-auto mt-10 grid max-w-md gap-6 sm:max-w-none sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 2xl:mt-16">
+        <div className="mx-auto mt-10 grid max-w-md gap-6 sm:max-w-none sm:grid-cols-2 lg:mt-12 xl:grid-cols-4 2xl:mt-16">
           {branches.map(({ name, address, image, tone }) => {
             const styles = cardTones[tone];
 
             return (
-              <article key={name} className={cn("flex flex-col gap-3 rounded-3xl p-6 lg:px-10", styles.surface)}>
+              <article key={name} className={cn("flex flex-col gap-3 rounded-3xl p-6", styles.surface)}>
                 <Image
                   src={image}
                   alt={`Tampak cabang ${name}`}

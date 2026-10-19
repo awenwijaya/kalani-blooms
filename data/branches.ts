@@ -1,7 +1,16 @@
-import { branchBatubulan, branchCanggu, branchDenpasar } from "@/assets";
+import { branchBatubulan, branchCanggu, branchDalung, branchDenpasar } from "@/assets";
 import type { Branch } from "@/types";
 
 export const branches: Branch[] = [
+  {
+    name: "Batubulan",
+    address: "Jl. Raya Batubulan No.111, Batubulan, Kec. Sukawati, Kabupaten Gianyar, Bali 80582",
+    streetAddress: "Jl. Raya Batubulan No.111",
+    locality: "Batubulan, Sukawati, Gianyar",
+    postalCode: "80582",
+    image: branchBatubulan,
+    tone: "primary",
+  },
   {
     name: "Canggu",
     address: "Jl. Raya Anyar No.4, Kerobokan, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
@@ -12,13 +21,13 @@ export const branches: Branch[] = [
     tone: "peach",
   },
   {
-    name: "Batubulan",
-    address: "Jl. Raya Batubulan No.111, Batubulan, Kec. Sukawati, Kabupaten Gianyar, Bali 80582",
-    streetAddress: "Jl. Raya Batubulan No.111",
-    locality: "Batubulan, Sukawati, Gianyar",
-    postalCode: "80582",
-    image: branchBatubulan,
-    tone: "primary",
+    name: "Dalung",
+    // TODO: replace with the full street address (also fill streetAddress and postalCode for SEO markup)
+    address: "Jl. Perum Dalung Permai No.2, Dalung, Kec. Kuta Utara, Kabupaten Badung",
+    locality: "Dalung, Kuta Utara, Badung",
+    image: branchDalung,
+    tone: "brown",
+    postalCode: "80361",
   },
   {
     name: "Denpasar",

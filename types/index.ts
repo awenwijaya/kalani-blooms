@@ -25,11 +25,11 @@ export type Branch = {
   /** Full address shown to visitors */
   address: string;
   /** Structured address parts, used for schema.org markup */
-  streetAddress: string;
+  streetAddress?: string;
   locality: string;
-  postalCode: string;
+  postalCode?: string;
   image: StaticImageData;
-  tone: Extract<CardTone, "peach" | "primary" | "secondary">;
+  tone: CardTone;
 };
 
 export type SocialPlatform = "instagram" | "tiktok";

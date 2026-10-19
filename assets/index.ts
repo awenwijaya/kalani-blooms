@@ -10,16 +10,23 @@ export const heroOne = image("/img/hero-1.png", 703, 725);
 export const heroTwo = image("/img/hero-2.png", 619, 651);
 
 // Collection (900x900 square crops)
-export const collection1 = image("/img/collection/1.jpg", 900, 900);
-export const collection2 = image("/img/collection/2.jpg", 900, 900);
-export const collection3 = image("/img/collection/3.jpg", 900, 900);
-export const collection4 = image("/img/collection/4.jpg", 900, 900);
-export const collection5 = image("/img/collection/5.jpg", 900, 900);
+export const collection1 = image("/img/collection/1.jpeg", 900, 900);
+export const collection2 = image("/img/collection/2.jpeg", 900, 900);
+export const collection3 = image("/img/collection/3.jpeg", 900, 900);
+export const collection4 = image("/img/collection/4.jpeg", 900, 900);
+export const collection5 = image("/img/collection/5.jpeg", 900, 900);
+export const collection6 = image("/img/collection/6.jpeg", 600, 600);
+export const collection7 = image("/img/collection/7.jpeg", 600, 600);
+export const collection8 = image("/img/collection/8.jpeg", 600, 600);
+export const collection9 = image("/img/collection/9.jpeg", 600, 600);
+export const collection10 = image("/img/collection/10.jpeg", 600, 600);
+export const collection11 = image("/img/collection/11.jpeg", 600, 600);
 
 // Branches
-export const branchCanggu = image("/img/branches/canggu.jpg", 429, 337);
-export const branchBatubulan = image("/img/branches/batubulan.jpg", 437, 332);
-export const branchDenpasar = image("/img/branches/denpasar.jpg", 429, 337);
+export const branchBatubulan = image("/img/branches/batubulan.jpeg", 1000, 750);
+export const branchCanggu = image("/img/branches/canggu.jpeg", 1000, 750);
+export const branchDalung = image("/img/branches/dalung.jpeg", 1000, 750);
+export const branchDenpasar = image("/img/branches/denpasar.jpeg", 1000, 750);
 
 // Decorative SVG
 export const heroBg = image("/svg/hero-bg.svg", 631, 746);
