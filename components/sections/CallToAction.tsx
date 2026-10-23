@@ -25,13 +25,13 @@ export function CallToAction() {
           <Sparkle size="md" className="right-4 top-1/3 lg:hidden" />
           <Image
             src={heroOne}
-            alt="Buket bunga lily dan anyelir dengan wrapping pink"
+            alt="Pesan buket lily dan anyelir pink di Kalani Blooms Bali"
             sizes="(min-width: 1536px) 500px, (min-width: 1024px) 384px, 320px"
             className="h-auto w-64 sm:w-80 lg:w-96 2xl:w-125"
           />
           <Image
             src={logoTagline}
-            alt="Kalani Blooms - Gift & Flower Gallery"
+            alt="Logo Kalani Blooms Gift & Flower Gallery"
             sizes="(min-width: 1536px) 732px, (min-width: 1024px) 516px, 280px"
             className="h-auto w-70 lg:w-129 2xl:w-183" />
         </div>

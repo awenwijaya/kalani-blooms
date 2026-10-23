@@ -54,7 +54,7 @@ export function Navbar() {
         <a href="#beranda" aria-label="Kalani Blooms - Beranda">
           <Image
             src={logo}
-            alt="Kalani Blooms"
+            alt="Logo Kalani Blooms"
             priority
             sizes="(min-width: 1536px) 200px, (min-width: 1024px) 160px, 132px"
             className="h-auto w-33 lg:w-40 2xl:w-50"

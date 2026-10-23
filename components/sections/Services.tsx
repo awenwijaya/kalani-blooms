@@ -76,7 +76,7 @@ export function Services() {
             <Image src={heroBg} alt="" aria-hidden sizes="(min-width: 1024px) 33vw, 448px" className="absolute inset-0 size-full object-contain" />
             <Image
               src={heroTwo}
-              alt="Buket bunga gerbera dan krisan dengan kartu ucapan"
+              alt="Buket bunga gerbera, krisan, dan mawar dengan kartu ucapan dari Kalani Blooms"
               sizes="(min-width: 1024px) 33vw, 448px"
               className="relative h-auto w-full"
             />

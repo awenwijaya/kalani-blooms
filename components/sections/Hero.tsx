@@ -18,7 +18,7 @@ export function Hero() {
         <div className="flex max-w-3xl flex-col gap-6">
           <div className="relative w-fit">
             <Sparkle size="sm" className="-right-4 -top-10" />
-            <Image src={logoTagline} alt="Kalani Blooms - Gift & Flower Gallery" sizes="(min-width: 1536px) 424px, (min-width: 1024px) 312px, 248px" className="h-auto w-62 lg:w-78 2xl:w-106" />
+            <Image src={logoTagline} alt="Logo Kalani Blooms Gift & Flower Gallery" sizes="(min-width: 1536px) 424px, (min-width: 1024px) 312px, 248px" className="h-auto w-62 lg:w-78 2xl:w-106" />
           </div>
 
           <h1>
@@ -48,7 +48,7 @@ export function Hero() {
           <Image src={heroBg} alt="" aria-hidden sizes="(min-width: 1024px) 460px, 90vw" className="absolute -top-4 right-0 h-auto w-9/10" />
           <Image
             src={heroOne}
-            alt="Buket bunga lily dan anyelir dengan wrapping pink"
+            alt="Buket bunga segar lily dan anyelir pink dengan wrapping peach dari Kalani Blooms, florist di Bali"
             priority
             sizes="(min-width: 1536px) 672px, (min-width: 1024px) 512px, 448px"
             className="relative h-auto w-full"

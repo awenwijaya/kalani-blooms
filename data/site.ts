@@ -1,13 +1,34 @@
 import type { NavItem, Social } from "@/types";
 
+const normalizeUrl = (value: string) => value.replace(/\/+$/, "");
+
+const vercelProductionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+const siteUrl = normalizeUrl(
+  process.env.NEXT_PUBLIC_SITE_URL || (vercelProductionHost ? `https://${vercelProductionHost}` : "http://localhost:3000"),
+);
+
+/** Only the production deployment should be indexed; Vercel previews and local dev stay out of search results */
+const deploymentEnv = process.env.VERCEL_ENV ?? (process.env.NODE_ENV === "production" ? "production" : "development");
+
 export const siteConfig = {
   name: "Kalani Blooms",
   title: "Kalani Blooms | Florist & Buket Bunga di Bali",
   description:
-    "Florist di Bali di Canggu, Batubulan, dan Denpasar. Buket bunga segar & artificial, custom bouquet, standing flower, dan pengantaran bunga.",
-  /** Set NEXT_PUBLIC_SITE_URL in .env.local / hosting env (see .env.example) */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    "Florist di Bali: Batubulan, Canggu, Dalung, dan Denpasar. Buket bunga segar & artificial, custom bouquet, standing flower, dan pengantaran bunga.",
+  url: siteUrl,
+  indexable: deploymentEnv === "production",
   locale: "id_ID",
+  /**
+   * Show each branch phone number on the page. Google only accepts structured data that matches visible content,
+   * so branch phones are added to the SEO markup only while this is true.
+   */
+  showBranchPhone: true,
+  /** Business phone in international format, e.g. "+6281234567890". Leave empty to omit it from the SEO markup. */
+  phone: "",
+  /** schema.org opening hours, e.g. ["Mo-Su 08:00-20:00"]. Leave empty to omit it from the SEO markup. */
+  openingHours: [] as string[],
+  /** Areas around the branches, used as areaServed in the SEO markup */
+  serviceAreas: ["Bali", "Denpasar", "Badung", "Gianyar"],
   keywords: [
     // Main
     "Kalani Blooms",
@@ -51,5 +72,5 @@ export const navigation: NavItem[] = [
 
 export const socials: Social[] = [
   { platform: "instagram", handle: "kalani.blooms", href: "https://www.instagram.com/kalani.blooms" },
-  { platform: "tiktok", handle: "kalani.blooms", href: "https://www.tiktok.com/@kalani.blooms" },
+  { platform: "tiktok", handle: "kalaniblooms", href: "https://www.tiktok.com/@kalaniblooms" },
 ];

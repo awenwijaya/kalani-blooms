@@ -1,3 +1,4 @@
+import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { CallToAction } from "@/components/sections/CallToAction";
 import { Collection } from "@/components/sections/Collection";
@@ -16,6 +17,7 @@ export default function HomePage() {
         <Locations />
         <CallToAction />
       </main>
+      <Footer />
     </>
   );
 }
