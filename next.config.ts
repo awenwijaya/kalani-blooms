@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const canonicalUrl = "https://www.kalaniblooms.com";
+
 const staticAssetCache = [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }];
 
 const nextConfig: NextConfig = {
@@ -8,6 +10,17 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 2678400, // 31 days
+  },
+  // Send the bare domain to the canonical www host with a permanent (301) redirect
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "kalaniblooms.com" }],
+        destination: `${canonicalUrl}/:path*`,
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [

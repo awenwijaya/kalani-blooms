@@ -2,10 +2,14 @@ import type { NavItem, Social } from "@/types";
 
 const normalizeUrl = (value: string) => value.replace(/\/+$/, "");
 
-const vercelProductionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+/** Canonical production domain (www). Used when NEXT_PUBLIC_SITE_URL is not set, so a build never falls back to localhost */
+export const PRODUCTION_URL = "https://www.kalaniblooms.com";
+
 const siteUrl = normalizeUrl(
-  process.env.NEXT_PUBLIC_SITE_URL || (vercelProductionHost ? `https://${vercelProductionHost}` : "http://localhost:3000"),
+  process.env.NEXT_PUBLIC_SITE_URL || (process.env.NODE_ENV === "production" ? PRODUCTION_URL : "http://localhost:3000"),
 );
+
+const everyDay = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 /** Only the production deployment should be indexed; Vercel previews and local dev stay out of search results */
 const deploymentEnv = process.env.VERCEL_ENV ?? (process.env.NODE_ENV === "production" ? "production" : "development");
@@ -22,11 +26,14 @@ export const siteConfig = {
    * Show each branch phone number on the page. Google only accepts structured data that matches visible content,
    * so branch phones are added to the SEO markup only while this is true.
    */
-  showBranchPhone: true,
+  showBranchPhone: false,
   /** Business phone in international format, e.g. "+6281234567890". Leave empty to omit it from the SEO markup. */
   phone: "",
-  /** schema.org opening hours, e.g. ["Mo-Su 08:00-20:00"]. Leave empty to omit it from the SEO markup. */
-  openingHours: [] as string[],
+  /**
+   * Opening hours (local time, WITA) shared by all branches, used as schema.org OpeningHoursSpecification.
+   * Add more entries for different hours on other days. Leave empty to omit it from the SEO markup.
+   */
+  openingHours: [{ days: everyDay, opens: "08:00", closes: "20:00" }],
   /** Areas around the branches, used as areaServed in the SEO markup */
   serviceAreas: ["Bali", "Denpasar", "Badung", "Gianyar"],
   keywords: [
