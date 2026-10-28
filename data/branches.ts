@@ -34,7 +34,7 @@ export const branches: Branch[] = [
     phone: "+6287747685056",
     address: "Jl. Perum Dalung Permai No.2, Dalung, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
     mapsUrl: "https://maps.app.goo.gl/YsBREsPUYkKPrw8L6",
-    streetAddress: "Jl. Perum Dalung Permai",
+    streetAddress: "Jl. Perum Dalung Permai No.2",
     locality: "Dalung, Kuta Utara, Badung",
     postalCode: "80361",
     geo: { latitude: -8.6297924, longitude: 115.1753067 },

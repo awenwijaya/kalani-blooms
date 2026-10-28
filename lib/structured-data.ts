@@ -24,7 +24,14 @@ const getBranchName = (branch: Branch) => branch.businessName ?? `${name} Floris
 /** Adds the value only when the condition is truthy, so empty fields never end up in the markup */
 const when = <T extends object>(condition: unknown, value: T) => (condition ? value : {});
 
-const hoursMarkup = when(openingHours.length > 0, { openingHours });
+const hoursMarkup = when(openingHours.length > 0, {
+  openingHoursSpecification: openingHours.map(({ days, opens, closes }) => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: days,
+    opens,
+    closes,
+  })),
+});
 
 /** Branch phone (only when it is visible on the page), falling back to the general business phone (if any) */
 const getBranchPhone = (branch: Branch) => (showBranchPhone && branch.phone) || phone;
