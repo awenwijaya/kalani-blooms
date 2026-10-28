@@ -11,17 +11,13 @@ echo "========================================"
 
 cd "$PROJECT_DIR"
 
-echo "[1/4] Updating source code..."
-git fetch origin main
-git reset --hard origin/main
-
-echo "[2/4] Installing dependencies..."
+echo "[1/3] Installing dependencies..."
 npm ci
 
-echo "[3/4] Building Next.js application..."
+echo "[2/3] Building Next.js application..."
 npm run build
 
-echo "[4/4] Restarting PM2..."
+echo "[3/3] Restarting PM2..."
 pm2 restart "$APP_NAME"
 
 echo "========================================"
