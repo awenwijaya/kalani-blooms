@@ -13,7 +13,7 @@ export const branches: Branch[] = [
     postalCode: "80582",
     geo: { latitude: -8.6206403, longitude: 115.2554709 },
     image: branchBatubulan,
-    tone: "primary",
+    tone: "wine",
   },
   {
     name: "Canggu",
@@ -26,7 +26,7 @@ export const branches: Branch[] = [
     postalCode: "80361",
     geo: { latitude: -8.6462705, longitude: 115.1616691 },
     image: branchCanggu,
-    tone: "peach",
+    tone: "mauve",
   },
   {
     name: "Dalung",
@@ -39,7 +39,7 @@ export const branches: Branch[] = [
     postalCode: "80361",
     geo: { latitude: -8.6297924, longitude: 115.1753067 },
     image: branchDalung,
-    tone: "brown",
+    tone: "rose",
   },
   {
     name: "Denpasar",
@@ -52,6 +52,6 @@ export const branches: Branch[] = [
     postalCode: "80234",
     geo: { latitude: -8.6944473, longitude: 115.2270001 },
     image: branchDenpasar,
-    tone: "secondary",
+    tone: "peach",
   },
 ];

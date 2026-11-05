@@ -20,6 +20,9 @@ export type CollectionItem = {
   alt: string;
 };
 
+/** Branch card palette: one tonal ramp from dark to light (wine > mauve > rose > peach) */
+export type BranchTone = "wine" | "mauve" | "rose" | "peach";
+
 export type Branch = {
   name: string;
   /** Business name exactly as on the Google Business Profile listing, e.g. "Kalani Blooms Florist - Canggu" */
@@ -37,7 +40,7 @@ export type Branch = {
   /** Coordinates of the store (from its Google Maps listing), used for local SEO */
   geo?: { latitude: number; longitude: number };
   image: StaticImageData;
-  tone: CardTone;
+  tone: BranchTone;
 };
 
 export type SocialPlatform = "instagram" | "tiktok";

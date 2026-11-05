@@ -23,10 +23,10 @@ export const collection10 = image("/img/collection/10.jpeg", 600, 600);
 export const collection11 = image("/img/collection/11.jpeg", 600, 600);
 
 // Branches
-export const branchBatubulan = image("/img/branches/batubulan.jpeg", 1000, 750);
-export const branchCanggu = image("/img/branches/canggu.jpeg", 1000, 750);
-export const branchDalung = image("/img/branches/dalung.jpeg", 1000, 750);
-export const branchDenpasar = image("/img/branches/denpasar.jpeg", 1000, 750);
+export const branchBatubulan = image("/img/branches/batubulan.jpg", 1000, 750);
+export const branchCanggu = image("/img/branches/canggu.jpg", 1000, 750);
+export const branchDalung = image("/img/branches/dalung.jpg", 1000, 750);
+export const branchDenpasar = image("/img/branches/denpasar.jpg", 1000, 750);
 
 // Decorative SVG
 export const heroBg = image("/svg/hero-bg.svg", 631, 746);

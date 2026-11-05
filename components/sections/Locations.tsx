@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Decoration, Sparkle } from "@/components/ui/Decoration";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { cardTones } from "@/components/ui/card-tones";
+import { branchTones } from "@/components/ui/card-tones";
 import { branches } from "@/data/branches";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/data/site";
@@ -26,7 +26,7 @@ export function Locations() {
         <div className="mx-auto mt-10 grid max-w-md gap-6 sm:max-w-none sm:grid-cols-2 lg:mt-12 xl:grid-cols-4 2xl:mt-16">
           {branches.map((branch) => {
             const { name, address, phone, image, tone } = branch;
-            const styles = cardTones[tone];
+            const styles = branchTones[tone];
 
             return (
               <article key={name} className={cn("flex flex-col gap-3 rounded-3xl p-6", styles.surface)}>
