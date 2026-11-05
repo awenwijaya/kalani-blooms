@@ -42,12 +42,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        // Fixed bar: at the very top it is transparent with Figma-like spacing above the logo;
-        // after scrolling it shrinks and gets the blurred background + shadow
-        "fixed inset-x-0 top-0 z-50 flex items-center transition-all duration-300",
+        "navbar-scroll fixed inset-x-0 top-0 z-50 flex items-center transition-all duration-300",
         isScrolled
           ? "h-(--header-height) bg-cream/90 shadow-sm backdrop-blur-sm"
-          : "h-(--header-top-height) pt-2 lg:pt-5",
+          : "h-(--header-top-height) pt-(--header-top-padding)",
       )}
     >
       <Container className="flex items-center justify-between">

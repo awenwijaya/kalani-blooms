@@ -13,6 +13,7 @@
   --color-cream: #fff8f2;
   --color-peach: #ffe2d1;
   --color-brown: #6e3511;
+  --color-mauve: #8a4a56; /* between primary and secondary, used by the branch cards */
   --color-ink: #303030;
   --color-body: #795c54;
   --color-caption: #86655d;
@@ -45,6 +46,13 @@
 
     @media (width >= 96rem) {
       --header-top-height: 6.5rem;
+    }
+
+    /* Space above the logo while the page is at the very top */
+    --header-top-padding: 0.5rem;
+
+    @media (width >= 64rem) {
+      --header-top-padding: 1.25rem;
     }
   }
 
@@ -120,6 +128,39 @@
   @media (width >= 96rem) {
     font-size: 1.125rem; /* 18px */
     line-height: 1.7;
+  }
+}
+
+/*
+ * Navbar scroll effect, driven by the scroll position itself (no JavaScript needed):
+ * over the first 5rem of scrolling the bar goes from transparent/tall to blurred/compact.
+ * Browsers without scroll-driven animations fall back to the class toggle in Navbar.tsx.
+ */
+@keyframes navbar-on-scroll {
+  from {
+    height: var(--header-top-height);
+    padding-top: var(--header-top-padding);
+    background-color: transparent;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0);
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+  }
+
+  to {
+    height: var(--header-height);
+    padding-top: 0;
+    background-color: color-mix(in srgb, var(--color-cream) 90%, transparent);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .navbar-scroll {
+    animation: navbar-on-scroll linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 5rem;
   }
 }
 

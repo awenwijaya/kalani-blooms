@@ -5,6 +5,7 @@ import { cn } from "@/lib/cn";
 const variants = {
   primary: "bg-primary text-white hover:bg-primary/90",
   secondary: "bg-secondary text-white hover:bg-secondary/90",
+  light: "bg-peach text-primary hover:bg-peach/90",
 } as const;
 
 const sizes = {
