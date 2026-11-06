@@ -132,8 +132,8 @@
 
 /*
  * Navbar scroll effect, driven by the scroll position itself (no JavaScript needed):
- * over the first 5rem of scrolling the bar goes from transparent/tall to tinted/compact. The blur itself is constant (backdrop-blur-sm in Navbar.tsx):
- * animating backdrop-filter renders differently in Chrome and Safari.
+ * over the first 5rem of scrolling the bar goes from transparent/tall to tinted/compact. The blur is deliberately NOT animated here (Chrome and Safari
+ * render an animated backdrop-filter differently): Navbar.tsx switches it on with the isScrolled class.
  * Browsers without scroll-driven animations fall back to the class toggle in Navbar.tsx.
  */
 @keyframes navbar-on-scroll {
