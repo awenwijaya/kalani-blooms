@@ -22,7 +22,6 @@
 
   --container-page: 107.5rem; /* 1640px content + 2 x 40px gutter */
   --tracking-eyebrow: 0.08em;
-  --blur-glow: 200px;
 }
 
 @layer base {
@@ -133,7 +132,8 @@
 
 /*
  * Navbar scroll effect, driven by the scroll position itself (no JavaScript needed):
- * over the first 5rem of scrolling the bar goes from transparent/tall to blurred/compact.
+ * over the first 5rem of scrolling the bar goes from transparent/tall to tinted/compact. The blur itself is constant (backdrop-blur-sm in Navbar.tsx):
+ * animating backdrop-filter renders differently in Chrome and Safari.
  * Browsers without scroll-driven animations fall back to the class toggle in Navbar.tsx.
  */
 @keyframes navbar-on-scroll {
@@ -142,8 +142,6 @@
     padding-top: var(--header-top-padding);
     background-color: transparent;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0);
-    -webkit-backdrop-filter: blur(0);
-    backdrop-filter: blur(0);
   }
 
   to {
@@ -151,8 +149,6 @@
     padding-top: 0;
     background-color: color-mix(in srgb, var(--color-cream) 90%, transparent);
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
   }
 }
 
@@ -162,6 +158,23 @@
     animation-timeline: scroll(root block);
     animation-range: 0 5rem;
   }
+}
+
+/*
+ * Soft blush glow drawn as a radial gradient (no filter: Safari handles huge blur() layers poorly and
+ * shows boxes around nearby images). The falloff follows a blurred disc, and the element is scaled up
+ * so the soft edge extends past its box like the old blur did.
+ */
+@utility bg-glow {
+  background-image: radial-gradient(
+    closest-side,
+    color-mix(in srgb, var(--color-blush) 29%, transparent) 0%,
+    color-mix(in srgb, var(--color-blush) 28%, transparent) 29%,
+    color-mix(in srgb, var(--color-blush) 25%, transparent) 44%,
+    color-mix(in srgb, var(--color-blush) 15%, transparent) 59%,
+    color-mix(in srgb, var(--color-blush) 5%, transparent) 80%,
+    transparent 100%
+  );
 }
 
 @utility no-scrollbar {
