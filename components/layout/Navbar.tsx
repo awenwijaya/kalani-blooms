@@ -42,13 +42,9 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        // Fixed bar: at the very top it is transparent with Figma-like spacing above the logo; after scrolling it shrinks
-        // and gets the blurred background + shadow. `navbar-scroll` (globals.css) animates this from the scroll position,
-        // the isScrolled classes below are the fallback for browsers without scroll-driven animations.
-        // backdrop-blur is always on (not animated): invisible while the bar is transparent, and identical in Chrome and Safari.
-        "navbar-scroll fixed inset-x-0 top-0 z-50 flex items-center backdrop-blur-sm transition-[height,padding,background-color,box-shadow] duration-300",
+        "navbar-scroll fixed inset-x-0 top-0 z-50 flex items-center [transition-property:height,padding,background-color,box-shadow,backdrop-filter,-webkit-backdrop-filter] duration-300",
         isScrolled
-          ? "h-(--header-height) bg-cream/90 shadow-sm"
+          ? "h-(--header-height) bg-cream/90 shadow-sm backdrop-blur-sm"
           : "h-(--header-top-height) pt-(--header-top-padding)",
       )}
     >
