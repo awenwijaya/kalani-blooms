@@ -42,7 +42,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "navbar-scroll fixed inset-x-0 top-0 z-50 flex items-center transition-all duration-300",
+        "navbar-scroll fixed inset-x-0 top-0 z-50 flex items-center [transition-property:height,padding,background-color,box-shadow,backdrop-filter,-webkit-backdrop-filter] duration-300",
         isScrolled
           ? "h-(--header-height) bg-cream/90 shadow-sm backdrop-blur-sm"
           : "h-(--header-top-height) pt-(--header-top-padding)",
@@ -55,7 +55,7 @@ export function Navbar() {
             alt="Logo Kalani Blooms"
             priority
             sizes="(min-width: 1536px) 200px, (min-width: 1024px) 160px, 132px"
-            className="h-auto w-33 lg:w-40 2xl:w-50"
+            className="h-auto w-33 lg:w-40 2xl:w-[201px]"
           />
         </a>
 

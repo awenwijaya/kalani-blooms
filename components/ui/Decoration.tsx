@@ -19,12 +19,12 @@ export function Decoration({ src, className }: DecorationProps) {
   );
 }
 
-/** Soft blurred blush circle used behind the order section. Size and position are set per usage. */
+/** Soft blush glow used behind the order section (radial gradient, see bg-glow). Size and position are set per usage. */
 export function Glow({ className }: { className?: string }) {
   return (
     <div
       aria-hidden
-      className={cn("pointer-events-none absolute -z-10 rounded-full bg-blush/35 blur-glow", className)}
+      className={cn("pointer-events-none absolute -z-10 scale-155 rounded-full bg-glow", className)}
     />
   );
 }

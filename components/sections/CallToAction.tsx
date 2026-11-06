@@ -32,8 +32,9 @@ export function CallToAction() {
           <Image
             src={logoTagline}
             alt="Logo Kalani Blooms Gift & Flower Gallery"
-            sizes="(min-width: 1536px) 732px, (min-width: 1024px) 516px, 280px"
-            className="h-auto w-70 lg:w-129 2xl:w-183" />
+            sizes="(min-width: 1536px) 440px, (min-width: 1024px) 384px, (min-width: 640px) 320px, 256px"
+            className="h-auto w-64 sm:w-80 lg:w-96 2xl:w-110"
+          />
         </div>
 
         <div className="relative flex flex-col items-center gap-6 text-center lg:items-end lg:text-right">

@@ -45,7 +45,7 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-lg lg:justify-self-end 2xl:max-w-2xl">
-          <Image src={heroBg} alt="" aria-hidden sizes="(min-width: 1024px) 460px, 90vw" className="absolute -top-4 right-0 h-auto w-9/10" />
+          <Image src={heroBg} alt="" aria-hidden loading="eager" sizes="(min-width: 1024px) 460px, 90vw" className="absolute -top-4 right-0 h-auto w-9/10" />
           <Image
             src={heroOne}
             alt="Buket bunga segar lily dan anyelir pink dengan wrapping peach dari Kalani Blooms, florist di Bali"
