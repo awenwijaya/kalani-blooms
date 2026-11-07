@@ -12,7 +12,7 @@ export const heroTwo = image("/img/hero-2.webp", 619, 651);
 // Collection (900x900 square crops)
 export const collection1 = image("/img/collection/1.jpeg", 900, 900);
 export const collection2 = image("/img/collection/2.jpeg", 900, 900);
-export const collection3 = image("/img/collection/3.jpeg", 900, 900);
+export const collection3 = image("/img/collection/3.jpeg", 1200, 1200);
 export const collection4 = image("/img/collection/4.jpeg", 900, 900);
 export const collection5 = image("/img/collection/5.jpeg", 900, 900);
 export const collection6 = image("/img/collection/6.jpeg", 600, 600);
